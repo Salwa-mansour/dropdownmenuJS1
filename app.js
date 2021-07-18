@@ -35,3 +35,28 @@ const navbar = new Navbar(
     document.querySelector('.menu-btn'),
     document.querySelector('.menu-list')
 )
+//------------ drop down script-----------------
+class Dropdown{
+    constructor(elem){
+        if(!(elem instanceof HTMLElement)){
+            throw new TypeError('not an html elemnt');
+        }
+        this.isOpen = false;
+        this.elem = elem;
+        this.elem.addEventListener('click',(e)=>{
+            e.preventDefault();
+            this.open();
+        });
+    }
+    // /////
+    open(){
+        if(!this.isOpen){
+            this.elem.querySelector('.dropdown-list').classList.add('show-dropdown');
+        }else{
+            this.elem.querySelector('.dropdown-list').classList.remove('show-dropdown');
+        }
+    this.isOpen= !this.isOpen;
+    }
+}
+const dropdownElem = document.querySelector('.dropdown');
+const navDropdown = new Dropdown(dropdownElem);
