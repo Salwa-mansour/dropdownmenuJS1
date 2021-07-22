@@ -1,0 +1,93 @@
+.main-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+.menu-list{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.menu-item:not(:last-child){
+    margin-right: 1rem;
+}
+.menu-item a ,
+.logo{
+    text-decoration: none;
+    color: #333;
+}
+.logo{
+    font-size: 1.5rem;
+}
+.menu-btn{
+    width: 35px;
+    border: none;
+    background-color: none;
+    cursor: pointer;
+    padding: 0;
+    display: none;
+}
+.bar{
+    height: 3px;
+    background-color: #333;
+    margin: .5rem 0;
+
+}
+.menu-btn:after,
+.menu-btn::before{
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: #333;
+}
+
+/* /////////////dropdown stylings////////// */
+.dropdown{
+    position: relative;
+}
+.drop-list{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 4px;
+    padding: 0.75rem;
+    position: absolute;
+    
+}
+.drop-list a:not(:first-child){
+    margin-top: .5rem;
+}
+.drop-list a{
+    white-space: nowrap;
+}
+/* the hidden role  --put it after the felx styilign so you dont 
+face spisefisty proplems or you tend to tepeate stylings */
+.nav-hidden{
+    display: none;
+}
+/* mobel */
+@media(max-width:600px){
+    .menu-btn{
+        display: block;
+
+    }
+    .main-nav{
+        flex-wrap: wrap;
+    }
+    .menu-list{
+        flex-basis: 100%;
+        flex-grow: 1;
+        flex-direction: column;
+    }
+    .menu-item{
+        margin-top:0.5rem;
+    }
+ 
+    .drop-list{
+        position: relative;
+        box-shadow: none;
+        background-color: rgb(211, 211, 211);
+    }
+}
